@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.btakim.takeorpickanduploadimagetofirebase"
     },
     "web": {
       "bundler": "metro",
@@ -27,7 +28,14 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to get images of car plates, chasis numbers or order forms",
+          "cameraPermission": "The app accesses your camera to let you take a picture of car plates, chasis numbers or order forms"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
