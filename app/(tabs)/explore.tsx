@@ -38,7 +38,12 @@ export default function Explore() {
   }, []);
 
   async function takePhoto() {
-    
+    // permission check
+    // TODO: Move this check to onboarding, keep here for sanity check
+    if (cameraPermission?.status !== ImagePicker.PermissionStatus.GRANTED) {
+      requestCameraPermission();
+    }
+
     try {
       const result = await ImagePicker.launchCameraAsync({
         allowsEditing: true,
@@ -122,15 +127,6 @@ export default function Explore() {
     } catch (e) {
       console.log(e);
     }
-  }
-
-  // permission check
-  // TODO: Move this check to onboarding, keep here for sanity check
-  if (cameraPermission?.status !== ImagePicker.PermissionStatus.GRANTED) {
-    requestCameraPermission();
-  }
-  if (mediaLibraryPermission?.status !== ImagePicker.PermissionStatus.GRANTED) {
-    requestMediaLibraryPermission();
   }
 
   return (

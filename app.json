@@ -2,6 +2,7 @@
   "expo": {
     "name": "take-or-pick-and-upload-image-to-firebase",
     "slug": "take-or-pick-and-upload-image-to-firebase",
+    "scheme": "take-or-pick-and-upload-image-to-firebas-scheme",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

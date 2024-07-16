@@ -31,6 +31,12 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen name="onboarding" 
+          options={{ 
+            presentation: "fullScreenModal",
+            headerShown: false,
+            animation: "fade", 
+          }} />
       </Stack>
     </ThemeProvider>
   );
