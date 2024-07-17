@@ -22,8 +22,6 @@ export default function Explore() {
   const [image, setImage] = useState("");
   const [files, setFiles] = useState([]);
   const [cameraPermission, requestCameraPermission] = ImagePicker.useCameraPermissions();
-  const [mediaLibraryPermission, requestMediaLibraryPermission] = ImagePicker.useMediaLibraryPermissions();
-
   
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "files"), (snapshot) => {
