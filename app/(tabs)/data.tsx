@@ -30,34 +30,49 @@ type StackParamList = {
 export default function DataScreen() {
   const navigation =
     useNavigation<NativeStackNavigationProp<StackParamList, "Payment">>();
-  const [categories, setCategories] = React.useState<Category>();
-  const [transactions, setTransactions] = React.useState<Transaction>(
-    {id:12,category_id:3,amount:3000,date:3,description:"bla",type:"Income"}
-    );
-  // const [categories, setCategories] = React.useState<Category[]>([]);
-  // const [transactions, setTransactions] = React.useState<Transaction[]>([ {id:12,category_id:3,amount:3000,date:3,description:"bla",type:"Income"}]);
+  // const [categories, setCategories] = React.useState<Category>();
+  // const [transactions, setTransactions] = React.useState<Transaction>({id:12,category_id:3,amount:3000,date:3,description:"bla",type:"Income"});
+  const [categories, setCategories] = React.useState<Category[]>([
+    {id:3,name:"Electronics",type:"Income"},
+    {id:2,name:"Bonus",type:"Expense"},
+  ]);
+  const [transactions, setTransactions] = React.useState<Transaction[]>([ 
+    {id:12,category_id:3,amount:3213,date:3,description:"bla",type:"Income"},
+    {id:11,category_id:4,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:13,category_id:3,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:14,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:15,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:16,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:17,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:18,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:19,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:20,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:21,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+    {id:31,category_id:2,amount:3232,date:3,description:"bla2",type:"Expense"},
+]);
 
   return (
     <>
       <ScrollView
         contentContainerStyle={{
           padding: 15,
-          paddingVertical: Platform.OS === "ios" ? 170 : 16,
+          paddingVertical: Platform.OS === "ios" ? 100 : 70,
         }}
       >
         {/* <AddTransaction insertTransaction={insertTransaction} /> */}
+        {/*
         <TransactionListItem
           categoryInfo={categories}
           transaction={transactions}
           // deleteTransaction={deleteTransaction}
         />
-    {/*
+        */}
+    
         <TransactionList
           categories={categories}
           transactions={transactions}
           // deleteTransaction={deleteTransaction}
         />
-        */}
       </ScrollView>
     </>
   );
